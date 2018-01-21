@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListViewCrud"
+             x:Class="ListViewCrud.MainPage">
+
+    <StackLayout>
+        <Entry x:Name="entryText"></Entry>
+        <Button x:Name="btnAdd" Text="Add" Clicked="AddBtn"></Button>
+    
+    <ListView x:Name="listView" VerticalOptions="EndAndExpand">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="entryListText" Text="{Binding ItemName}"></Entry>
+                            <Button x:Name="btnEdit" Text="Edit"></Button>
+                            <Button x:Name="btnDel" Text="Delete" CommandParameter="{Binding ID}" Clicked="DeleteItem"></Button>
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+
+        </ListView.ItemTemplate>
+    </ListView>
+    </StackLayout>
+</ContentPage>

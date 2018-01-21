@@ -33,6 +33,7 @@ namespace ListViewCrud
 
         private async void RefreshListView()
         {
+            //To get data from Database
             List<Item> allitems = await App.Database.GetItemsAsync();           
             listView.ItemsSource = allitems;
 
